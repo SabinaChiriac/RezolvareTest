@@ -8,7 +8,7 @@ public:
     GraphicObjects graphic_obj;
     Node* next;
     Node* previous;
-
+    
     Node();
     Node(GraphicObjects data);
 

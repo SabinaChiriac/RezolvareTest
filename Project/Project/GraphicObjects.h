@@ -6,9 +6,9 @@ class GraphicObjects
 {
 private:
 	
-	std::string g_type;
-	std::string g_name;
-	ObjectProperties g_properties;
+	std::string type;
+	std::string name;
+	ObjectProperties properties;
 
 public:
 
@@ -16,9 +16,8 @@ public:
     std::string GetName() const;
 	ObjectProperties GetProperties();
 
-	GraphicObjects(std::string type, std::string name, ObjectProperties properties);
+	GraphicObjects(const std::string& type, const std::string& name, const ObjectProperties& properties);
 	GraphicObjects();
-
 	friend std::ostream& operator << (std::ostream& out, const GraphicObjects& graphic_obj);
 
 };

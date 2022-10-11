@@ -2,19 +2,20 @@
 
 std::string ObjectProperties::GetProperty() const
 {
-	return o_property;
+	return property;
 }
 
 std::string ObjectProperties::GetValue() const
 {
-	return o_value;
+	return value;
 }
 
-ObjectProperties::ObjectProperties(std::string property, std::string value): 
-	o_property(property),o_value(value)
+ObjectProperties::ObjectProperties(const std::string& property,const std::string& value): 
+	property(property),value(value)
 {
 }
 
 ObjectProperties::ObjectProperties()
 {
 }
+
