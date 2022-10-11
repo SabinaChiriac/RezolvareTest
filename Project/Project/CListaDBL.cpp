@@ -21,7 +21,7 @@ CListaDBL::~CListaDBL()
 	{
 		tmp = head;
 		head = head->next;
-		delete(tmp);
+		delete tmp;
 	}
 	head = nullptr;
 }
@@ -40,7 +40,7 @@ void CListaDBL::insertObject(GraphicObjects graphicObj)
 		{
 			Node* node = new Node();
 			node = head->next;
-			while (node != NULL && node->graphic_obj.GetType() == graphicObj.GetType())
+			while (node != nullptr && node->graphic_obj.GetType() == graphicObj.GetType())
 			{  
 				if (verifyName(node->graphic_obj.GetName(), graphicObj.GetName()) != 0)
 					break;
@@ -77,7 +77,7 @@ void CListaDBL::deleteObject(std::string objectName)
 			{
 				tmp->next = nodeToDelete->next;
 				nodeToDelete->next->previous = tmp;
-				delete(nodeToDelete);
+				delete nodeToDelete;
 				return;
 			}
 			tmp = tmp->next;
@@ -182,7 +182,7 @@ void CListaDBL::print(std::string fileName)
 	}
 
 	out.close();
-	delete(node);
+	delete node;
 }
 
 int CListaDBL::verifyName(std::string name1, std::string name2)
